@@ -1,23 +1,31 @@
 choice = str(input("encode or decode ? "))
 if choice.lower().strip() == "encode":
     text = input("enter message: ")
-    list = []
+    list_with_encoded_message = []
+
+
     def encode():
         for i in text:
-            list.append(ord(i))
-        print("your encrypted message:", str(list).strip('[]'))
+            list_with_encoded_message.append(ord(i))
+        print("your encrypted message:", str(list_with_encoded_message).strip('[]'))
+
+
     encode()
+
 elif choice.lower().strip() == "decode":
-    lista = input("give me the numbers: ")
-    lista = lista.replace(',', '').split()
-    new_lista = []
+    users_input = input("give me the numbers: ")
+    splitted_input = users_input.replace(',', '').split()
+    new_list = []
+
+
     def decode():
-        for i in lista:
+        for i in splitted_input:
             i = int(i)
-            new_lista.append(chr(i))
-        print("the message:", "".join(map(str, new_lista)))
+            new_list.append(chr(i))
+        print("the message:", "".join(map(str, new_list)))
+
+
     decode()
 else:
     print("really?")
     exit()
-
